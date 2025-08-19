@@ -50,8 +50,11 @@ const sendBatchApplication = asyncHandler(async (req, res) => {
         if (user.portfolioUrl) {
             signatureHtml += `<p>Portfolio: <a href="${user.portfolioUrl}">${user.portfolioUrl}</a></p>`;
         }
+         if (user.githubUrl) {
+            signatureHtml += `<p>GitHub: <a href="${user.githubUrl}">${user.githubUrl}</a></p>`;
+        }
 
-        // Combine the personalized body with the dynamic signature
+
         const finalHtmlBody = `<div style="font-family: sans-serif; line-height: 1.6;">${emailBody.replace(/\n/g, '<br>')}</div><br>${signatureHtml}`;
 
         const emailSent = await sendEmail({

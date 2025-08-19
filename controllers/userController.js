@@ -34,7 +34,7 @@ const updateUserProfile = asyncHandler(async(req, res)=> {
     }
 
     // Whitelist fields that can be updated
-    const allowedUpdates = ["name", "resumeUrl", "linkedinProfile", "portfolioUrl", "defaultCoverLetter"];
+    const allowedUpdates = ["name", "resumeUrl", "linkedinProfile", "portfolioUrl", "githubUrl", "defaultCoverLetter"];
     const updates = Object.keys(req.body);
     const isValidOperation = updates.every(update=> allowedUpdates.includes(update));
 

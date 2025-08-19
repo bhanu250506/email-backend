@@ -36,6 +36,8 @@ const userSchema = new mongoose.Schema({
         trim: true,
         default: ""
     },
+        githubUrl: { type: String, trim: true, default: "" }, 
+
     defaultCoverLetter: {
         type: String,
         default: "Dear {company_name} team,\n\nI am writing to express my interest in a position at your company. Please find my resume attached for your review. \n\nThank you for your time and consideration.\n\nSincerely,\n{user_name}"
